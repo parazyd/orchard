@@ -20,7 +20,7 @@ arrayvec = "0.7.0"
 bigint = "4"
 ff = "0.10"
 group = "0.10"
-halo2 = "0.0"
+halo2 = { git = "https://github.com/zcash/halo2", rev = "236a5e37a53152b49bc8c19049bc98e67968fc1c" }
 lazy_static = "1"
 pasta_curves = "0.1.2"
 rand = "0.8"
