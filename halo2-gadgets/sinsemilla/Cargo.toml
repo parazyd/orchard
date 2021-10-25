@@ -1,0 +1,45 @@
+[package]
+name = "sinsemilla"
+version = "0.0.0"
+authors = [
+    "Sean Bowe <sean@electriccoin.co>",
+    "Jack Grigg <jack@electriccoin.co>",
+]
+edition = "2018"
+description = "Sinsemilla hash function"
+license-file = "LICENSE-BOSL"
+repository = "https://github.com/zcash/orchard"
+documentation = "https://docs.rs/orchard"
+readme = "README.md"
+
+# We are not publishing this yet.
+publish = false
+
+[target.'cfg(unix)'.dev-dependencies]
+pprof = { version = "0.4.2", features = ["criterion", "flamegraph"] }
+
+[dependencies]
+ecc = { package = "halo2_ecc", version = "0.0", path = "../halo2_ecc" }
+ff = "0.11"
+group = "0.11"
+halo2 = { version = "=0.1.0-beta.1", optional = true }
+lazy_static = "1"
+pasta_curves = "0.2.1"
+rand = "0.8"
+subtle = "2.3"
+utilities = { package = "halo2_utilities", version = "0.0", path = "../halo2_utilities" }
+
+# Developer tooling dependencies
+plotters = { version = "0.3.0", optional = true }
+
+[dev-dependencies]
+criterion = "0.3"
+
+[features]
+dev-graph = ["halo2/dev-graph", "plotters"]
+testing = []
+test-ecc = ["ecc/testing"]
+
+[[bench]]
+name = "primitive"
+harness = false

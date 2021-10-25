@@ -2,14 +2,15 @@
 
 use crate::{
     constants::{
-        util::gen_const_array_with_default, L_ORCHARD_MERKLE, MERKLE_CRH_PERSONALIZATION,
+        sinsemilla::{i2lebsp_k, L_ORCHARD_MERKLE, MERKLE_CRH_PERSONALIZATION},
         MERKLE_DEPTH_ORCHARD,
     },
     note::commitment::ExtractedNoteCommitment,
-    primitives::sinsemilla::{i2lebsp_k, HashDomain},
 };
 use incrementalmerkletree::{Altitude, Hashable};
 use pasta_curves::{arithmetic::FieldExt, pallas};
+use sinsemilla::primitive::HashDomain;
+use utilities::gen_const_array_with_default;
 
 use ff::{Field, PrimeField, PrimeFieldBits};
 use lazy_static::lazy_static;

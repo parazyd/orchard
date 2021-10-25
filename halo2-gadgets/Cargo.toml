@@ -1,0 +1,8 @@
+[workspace]
+
+members = [
+    "halo2_ecc",
+    "halo2_utilities",
+    "halo2_poseidon",
+    "sinsemilla",
+]

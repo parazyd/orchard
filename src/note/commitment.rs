@@ -6,11 +6,11 @@ use pasta_curves::{arithmetic::FieldExt, pallas};
 use subtle::{ConstantTimeEq, CtOption};
 
 use crate::{
-    constants::{L_ORCHARD_BASE, NOTE_COMMITMENT_PERSONALIZATION},
-    primitives::sinsemilla,
+    constants::{fixed_bases::NOTE_COMMITMENT_PERSONALIZATION, L_ORCHARD_BASE},
     spec::extract_p,
     value::NoteValue,
 };
+use sinsemilla::primitive as sinsemilla;
 
 #[derive(Debug)]
 pub(crate) struct NoteCommitTrapdoor(pub(super) pallas::Scalar);
